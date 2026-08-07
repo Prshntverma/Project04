@@ -144,7 +144,6 @@ public class UserRegistrationCtl extends BaseCtl<UserBean, UserModel> {
 		ServletUtility.setBean(bean, request);
 		ServletUtility.forwardPage(getView(), request, response);
 	}
-
 	@Override
 	protected String getView() {
 		return ORSView.USER_REGISTRATION_VIEW;

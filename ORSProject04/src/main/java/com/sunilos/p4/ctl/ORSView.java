@@ -95,11 +95,10 @@ public interface ORSView {
 	public String SUBJECT_REPORT_VIEW = "/reports/SubjectListReport.jrxml";
 	public String MARKSHEET_REPORT_VIEW = "/reports/MarksheetListReport.jrxml";
 	public String FACULTY_REPORT_VIEW = "/reports/FacultyListReport.jrxml";
-	
-	
+
 //	----------------use case -------------------------------
-	
-	//==================== College Record ====================//
+
+	// ==================== College Record ====================//
 
 	public String COLLEGE_RECORD_VIEW = PAGE_FOLDER + "/CollegeRecordView.jsp";
 	public String COLLEGE_RECORD_LIST_VIEW = PAGE_FOLDER + "/CollegeRecordList.jsp";
@@ -108,22 +107,87 @@ public interface ORSView {
 	public String COLLEGE_RECORD_LIST_CTL = APP_CONTEXT + "/ctl/CollegeRecordListCtl";
 
 //	======================Department usecase===============================
-	
-	public  String DEPARTMENT_VIEW = PAGE_FOLDER + "/DepartmentView.jsp";
 
-	public  String DEPARTMENT_LIST_VIEW = PAGE_FOLDER + "/DepartmentListView.jsp";
+	public String DEPARTMENT_VIEW = PAGE_FOLDER + "/DepartmentView.jsp";
 
-	public  String DEPARTMENT_CTL = APP_CONTEXT + "/ctl/DepartmentCtl";
+	public String DEPARTMENT_LIST_VIEW = PAGE_FOLDER + "/DepartmentListView.jsp";
+
+	public String DEPARTMENT_CTL = APP_CONTEXT + "/ctl/DepartmentCtl";
 
 	public String DEPARTMENT_LIST_CTL = APP_CONTEXT + "/ctl/DepartmentListCtl";
-	
-//====================Exam Module==============================
-	
-	public  String EXAM_VIEW =PAGE_FOLDER + "/ExamView.jsp";
-	public  String EXAM_LIST_VIEW = PAGE_FOLDER + "/ExamListView.jsp";
 
-	public  String EXAM_CTL = APP_CONTEXT + "/ctl/ExamCtl";
-	public  String EXAM_LIST_CTL = APP_CONTEXT + "/ctl/ExamListCtl";
+//====================Exam Module==============================
+
+	public String EXAM_VIEW = PAGE_FOLDER + "/ExamView.jsp";
+	public String EXAM_LIST_VIEW = PAGE_FOLDER + "/ExamListView.jsp";
+
+	public String EXAM_CTL = APP_CONTEXT + "/ctl/ExamCtl";
+	public String EXAM_LIST_CTL = APP_CONTEXT + "/ctl/ExamListCtl";
+
+//===========================Branch Module==================================//
+
+	/*
+	 * public String BRANCH_VIEW = PAGE_FOLDER + "/jsp/BranchView.jsp"; public
+	 * String BRANCH_LIST_VIEW = PAGE_FOLDER + "/jsp/BranchListView.jsp"; public
+	 * String BRANCH_CTL = APP_CONTEXT + "/ctl/BranchCtl"; public String
+	 * BRANCH_LIST_CTL = APP_CONTEXT + "/ctl/BranchListCtl";
+	 */
+
+	// ===========================Branch Module==================================//
+
+	public String BRANCH_VIEW = PAGE_FOLDER + "/BranchView.jsp";
+	public String BRANCH_LIST_VIEW = PAGE_FOLDER + "/BranchListView.jsp";
+
+	public String BRANCH_CTL = APP_CONTEXT + "/ctl/BranchCtl";
+	public String BRANCH_LIST_CTL = APP_CONTEXT + "/ctl/BranchListCtl";
+
+//	====================insurance module =============================
+
+	// Insurance Module
+
+	public String INSURANCE_VIEW = PAGE_FOLDER + "/InsuranceView.jsp";
+
+	public String INSURANCE_LIST_VIEW = PAGE_FOLDER + "/InsuranceListView.jsp";
+
+	public String INSURANCE_CTL = APP_CONTEXT + "/ctl/InsuranceCtl";
+
+	public String INSURANCE_LIST_CTL = APP_CONTEXT + "/ctl/InsuranceListCtl";
+
+//	==================FacultyModuleee==========================//
+
+	// Faculty Module
+	public String FACULTY_M_CTL = APP_CONTEXT + "/ctl/FacultyModuleCtl";
+	public String FACULTY_M_LIST_CTL = APP_CONTEXT + "/ctl/FacultyModuleListCtl";
+	public String FACULTY_M_VIEW = PAGE_FOLDER + "/jsp/FacultyModuleView.jsp";
+	public String FACULTY_M_LIST_VIEW = PAGE_FOLDER + "/jsp/FacultyModuleListView.jsp";
+
+//	======================healthcare module================================//
+	// Healthcare Module
+	public String HEALTHCARE_CTL = APP_CONTEXT + "/ctl/HealthcareCtl";
+	public String HEALTHCARE_LIST_CTL = APP_CONTEXT + "/ctl/HealthcareListCtl";
+
+	public String HEALTHCARE_VIEW = PAGE_FOLDER + "/HealthcareView.jsp";
+	public String HEALTHCARE_LIST_VIEW = PAGE_FOLDER + "/HealthcareList.jsp";
+
+	public String HEALTHCARE_REPORT_CTL = APP_CONTEXT + "/ctl/HealthcareReportCtl";
+
+
+//   =======================customer module ==================================//
+   
+	public String CUSTOMER_CTL = APP_CONTEXT + "/ctl/CustomerCtl";
+	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
+	public String CUSTOMER_VIEW = PAGE_FOLDER +"/CustomerView.jsp";
+	public String CUSTOMER_LIST_VIEW = PAGE_FOLDER + "/CustomerListView.jsp";
+	
+//	=======================product ============================== // 
+	
+	public String PRODUCT_M_VIEW = PAGE_FOLDER  + "/ProductMView.jsp";
+	public String PRODUCT_M_LIST_VIEW = PAGE_FOLDER  + "/ProductMListView.jsp";
+	public String PRODUCT_M_CTL = APP_CONTEXT + "/ctl/ProductMCtl";
+	public String PRODUCT_M_LIST_CTL = APP_CONTEXT + "/ctl/ProductMListCtl";
+	
+	
+	
 	
 	
 	

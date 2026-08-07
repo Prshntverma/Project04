@@ -354,15 +354,95 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.EXAM_LIST_CTL%>"> <i
 								class="bi bi-building me-2 text-success"></i>  Exam List
 						</a></li>
-						
-						
-						
-						
-						
-						
-						
-						
-						
+						<!--Branch Module.....  -->
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-building me-1"></i> Branch Manage
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.BRANCH_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add Branch
+						</a></li>
+						<li><a class="dropdown-item"
+							href="<%=ORSView.BRANCH_LIST_CTL%>"> <i
+								class="bi bi-building me-2 text-success"></i>  Branch List
+						</a></li>
+	<!--,.............................insurance................................  -->
+					 	<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-shield-check me-1"></i> Insurance Manage
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.INSURANCE_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add Insurance
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.INSURANCE_LIST_CTL%>"> <i
+								class="bi bi-shield-check me-2 text-success"></i> Insurance List
+						</a></li> 
+  <!--................................ health Care moduleeeee.........--------------------------  -->
+              <%--  <li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-home me-1"></i> Health care
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.HEALTHCARE_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add Health Care
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.HEALTHCARE_LIST_CTL%>"> <i
+								class="bi bi-shield-check me-2 text-success"></i>  HC List
+						</a></li> --%>
+<%--                <li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-home me-1"></i> Customer
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.CUSTOMER_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add customer
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.CUSTOMER_LIST_CTL%>"> <i
+								class="bi bi-shield-check me-2 text-success"></i>  customer List
+						</a></li> --%>
+ <!--====================================================================================  -->
+
+<%-- 
+      <li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-home me-1"></i> Product
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.PRODUCT_M_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add Product
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.PRODUCT_M_LIST_CTL%>"> <i
+								class="bi bi-shield-check me-2 text-success"></i>  ProductList
+						</a></li>
+ --%>
+
+
+
+       
+
+
+
+
 					</ul></li>
 					
 				<%

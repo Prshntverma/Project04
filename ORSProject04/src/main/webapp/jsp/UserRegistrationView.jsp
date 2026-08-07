@@ -1,3 +1,4 @@
+
 <%@page import="com.sunilos.p4.ctl.UserRegistrationCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="java.util.HashMap"%>
@@ -24,7 +25,7 @@ genderMap.put("F", "Female");
 			<div class="d-flex justify-content-center mb-3">
 				<div
 					class="rounded-circle d-flex align-items-center justify-content-center"
-					style="width: 60px; height: 60px; background: rgba(255, 255, 255, 0.18); font-size: 1.6rem; border: 2px solid rgba(255, 255, 255, 0.3);">
+					style="width: 60px; height: 60px; background: rgba(255, 2 55, 255, 0.18); font-size: 1.6rem; border: 2px solid rgba(255, 255, 255, 0.3);">
 					<i class="bi bi-person-plus-fill"></i>
 				</div>
 			</div>
@@ -73,7 +74,7 @@ genderMap.put("F", "Female");
 						<label class="form-label fw-semibold">Last Name <span
 							class="text-danger">*</span></label> <input type="text" name="lastName"
 							class="form-control"
-							value="<%=DataUtility.getStringData(bean.getLastName())%>">
+							value="=l-kom88888888888888888888888888888888888888888888888888888888888888888888888hq<%=DataUtility.getStringData(bean.getLastName())%>">
 						<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("lastName", request)%></div>
 					</div>
 				</div>

@@ -52,8 +52,7 @@ MessageSource ms = MessageSource.getInstance();
 							class="form-label fw-semibold text-secondary small text-uppercase tracking-wide">
 							<i class="bi bi-person-fill me-1"></i><%=ms.get("login.userid")%>
 							<span class="text-danger">*</span>
-						</label> <input type="text" name="login"
-							class="form-control form-control-lg"
+						</label> <input type="text" name="login" class="form-control form-control-lg"
 							placeholder="Enter your login ID"
 							value="<%=DataUtility.getStringData(bean.getLogin())%>">
 						<%
@@ -117,7 +116,7 @@ MessageSource ms = MessageSource.getInstance();
 		</div>
 
 		<!-- Below card -->
-		<p class="text-center text-muted small mt-3">&copy; 2024 Rays
+		<p class="text-center text-muted small mt-3">&copy; 2025 Rays
 			Technologies &mdash; Online Result System</p>
 
 	</div>

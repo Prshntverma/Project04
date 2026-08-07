@@ -67,7 +67,7 @@ List l = (List) request.getAttribute("collegeList");
 					<label class="form-label fw-semibold">Date of Birth
 						(mm/dd/yyyy)</label>
 					<div class="input-group">
-						<input type="text" name="dob" class="form-control" readonly
+						<input type="text" name="dob" id="udate" class="form-control" readonly
 							value="<%=DataUtility.getDateString(bean.getDob())%>"> <a
 							class="btn btn-outline-secondary" href="javascript:void(0)"
 							onclick="getCalendar(this.parentNode.querySelector('[name=dob]'));">

@@ -1,3 +1,4 @@
+
 <%@page import="com.sunilos.p4.ctl.StudentListCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
@@ -49,6 +50,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 					class="form-control form-control-sm" style="max-width: 160px;"
 					placeholder="First Name"
 					value="<%=ServletUtility.getParameter("firstName", request)%>">
+					 
 				<input type="text" name="lastName"
 					class="form-control form-control-sm" style="max-width: 160px;"
 					placeholder="Last Name"
@@ -56,6 +58,14 @@ String _suc = ServletUtility.getSuccessMessage(request);
 				<input type="text" name="email" class="form-control form-control-sm"
 					style="max-width: 200px;" placeholder="Email ID"
 					value="<%=ServletUtility.getParameter("email", request)%>">
+					
+				<%-- <input type="text" name="mobileNo" class="form-control form-control-sm"
+					style="max-width: 200px;" placeholder="Mobile no"
+					value="<%=ServletUtility.getParameter("mobileNo", request)%>">
+					 --%>
+					
+					
+					
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
 					<i class="bi bi-search me-1"></i> Search
