@@ -1,131 +1,214 @@
-<%@page import="com.sunilos.p4.ctl.UserListCtl"%>
+<%@page import="com.sunilos.p4.ctl.EmpListCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
+<%@page import="com.sunilos.p4.bean.EmpModelBean"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
-<%@page import="com.sunilos.p4.bean.UserBean"%>
 
 <%
 int pageNo = ServletUtility.getPageNo(request);
 int pageSize = ServletUtility.getPageSize(request);
 int index = ((pageNo - 1) * pageSize) + 1;
+
 List list = ServletUtility.getList(request);
-Iterator<UserBean> it = list.iterator();
+Iterator<EmpModelBean> it = list.iterator();
+
 String _err = ServletUtility.getErrorMessage(request);
+String _suc = ServletUtility.getSuccessMessage(request);
 %>
 
-<div class="container-fluid px-4 py-4" style="max-width: 1000px;">
+<div class="container-fluid px-4 py-4" style="max-width: 1100px;">
+
 	<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
 
 		<div
 			class="card-header text-white border-0 py-3 px-4 d-flex justify-content-between align-items-center"
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
+
 			<h5 class="mb-0 fw-bold">
-				<i class="bi bi-people-fill me-2"></i> User List
+				<i class="bi bi-person-badge-fill me-2"></i> Employee List
 			</h5>
+
 			<div class="d-flex gap-2">
-				<a href="<%=ORSView.USER_REPORT_CTL%>" target="_blank"
-					class="btn btn-sm btn-warning fw-semibold"> <i
-					class="bi bi-file-earmark-pdf me-1"></i> Print PDF
-				</a> <a href="<%=ORSView.USER_REPORT_CTL%>?type=doc" target="_blank"
-					class="btn btn-sm btn-info fw-semibold"> <i
-					class="bi bi-file-earmark-word me-1"></i> Print DOC
-				</a> <a href="UserCtl"
+
+				<a href="EmpCtl"
 					class="btn btn-sm btn-light text-primary fw-semibold"> <i
-					class="bi bi-plus-circle me-1"></i> Add User
+					class="bi bi-plus-circle me-1"></i> Add Employee
+
 				</a>
+
 			</div>
+
 		</div>
 
-		<form action="<%=ORSView.USER_LIST_CTL%>" method="POST">
+
+		<form action="<%=ORSView.EMP_LIST_CTL%>" method="POST">
+
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 				type="hidden" name="pageSize" value="<%=pageSize%>">
 
+
+			<!-- Search -->
+
 			<div
 				class="p-3 bg-light border-bottom d-flex flex-wrap gap-2 align-items-center">
-				<input type="text" name="firstName"
-					class="form-control form-control-sm" style="max-width: 180px;"
-					placeholder="First Name"
-					value="<%=ServletUtility.getParameter(" firstName ", request)%>">
-				<input type="text" name="login" class="form-control form-control-sm"
-					style="max-width: 200px;" placeholder="Login ID"
-					value="<%=ServletUtility.getParameter(" login ", request)%>">
+
+				<input type="text" name="name" class="form-control form-control-sm"
+					style="max-width: 250px;" placeholder="Search by Employee Name"
+					value="<%=ServletUtility.getParameter("name", request)%>">
+
+				<input type="text" name="designation"
+					class="form-control form-control-sm" style="max-width: 250px;"
+					placeholder="Search by Designation"
+					value="<%=ServletUtility.getParameter("designation", request)%>">
+
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
+
 					<i class="bi bi-search me-1"></i> Search
+
 				</button>
+
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_DELETE%>"
-					class="btn btn-danger btn-sm ms-auto"
-					onclick="return confirm('Delete selected users?')">
+					class="btn btn-danger btn-sm ms-auto">
+
 					<i class="bi bi-trash me-1"></i> Delete Selected
+
 				</button>
+
 			</div>
+
+
+			<!-- Error Message -->
 
 			<%
 			if (_err != null && !_err.isEmpty()) {
 			%>
+
 			<div class="alert alert-danger py-2 mx-3 mt-3">
+
 				<i class="bi bi-exclamation-triangle-fill me-2"></i>
+
 				<%=_err%>
+
 			</div>
+
 			<%
 			}
 			%>
 
+
+			<!-- Success Message -->
+
+			<%
+			if (_suc != null && !_suc.isEmpty()) {
+			%>
+
+			<div class="alert alert-success py-2 mx-3 mt-3">
+
+				<i class="bi bi-check-circle-fill me-2"></i>
+
+				<%=_suc%>
+
+			</div>
+
+			<%
+			}
+			%>
+
+
+			<!-- Table -->
+
 			<div class="table-responsive">
+
 				<table class="table table-hover align-middle mb-0">
+
 					<thead class="table-light">
+
 						<tr>
+
 							<th width="40"><input type="checkbox"
-								onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)"></th>
+								onclick="document.querySelectorAll('input[name=ids]').forEach(c=>c.checked=this.checked)">
+
+							</th>
+
 							<th>#</th>
-							<th>Photo</th>
-							<th>First Name</th>
-							<th>Last Name</th>
-							<th>Login ID</th>
-							<th>Gender</th>
-							<th>Date of Birth</th>
+
+							<th>Name</th>
+
+							<th>Designation</th>
+
+							<th>Salary</th>
+
+							<th>Joining Date</th>
+
 							<th>Action</th>
+
 						</tr>
+
 					</thead>
+
+
 					<tbody>
+
 						<%
 						while (it.hasNext()) {
-							UserBean bean = it.next();
+
+							EmpModelBean bean = it.next();
 						%>
+
 						<tr>
 
-<!-- check box for delete  --><td><input type="checkbox" name="ids"
+							<td><input type="checkbox" name="ids"
 								value="<%=bean.getId()%>"></td>
 
+
 							<td class="text-muted small"><%=index++%></td>
-							<td><img
-								src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=bean.getId()%>"
-								onerror="this.style.display='none';" alt="User Photo"
-								class="rounded-circle border" width="30" height="30"
-								style="object-fit: cover;"></td>
-							<td class="fw-semibold"><%=bean.getFirstName()%></td>
-							<td><%=bean.getLastName()%></td>
-							<td><%=bean.getLogin()%></td>
-							<td><%=bean.getGender()%></td>
-							<td class="text-muted small"><%=bean.getDob()%></td>
-							<td><a href="UserCtl?id=<%=bean.getId()%>"
+
+
+							<td class="fw-semibold"><%=bean.getName()%></td>
+
+
+							<td><%=bean.getDesignation()%></td>
+
+
+							<td><%=bean.getSalary()%></td>
+
+
+							<td><%=bean.getJoiningDate()%></td>
+
+
+							<td><a href="EmpCtl?id=<%=bean.getId()%>"
 								class="btn btn-sm btn-outline-primary"> <i
 									class="bi bi-pencil"></i> Edit
+
 							</a></td>
+
 						</tr>
+
 						<%
 						}
 						%>
+
 					</tbody>
+
 				</table>
+
 			</div>
 
+
+			<!-- Pagination -->
+
 			<div class="p-3 border-top">
+
 				<%@ include file="ListFooter.jsp"%>
+
 			</div>
+
 		</form>
+
 	</div>
+
 </div>

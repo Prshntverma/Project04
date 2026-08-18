@@ -20,7 +20,7 @@ import jakarta.servlet.http.HttpServletResponse;
  * Base list controller class is extended by all the list pages in the
  * application. It contains search and pagination operation of a list page.
  * 
- * इस बेस लिस्ट कंट्रोलर क्लास को एप्लीकेशन के सारे लिस्ट पेजेज इन्हेरिट करते
+ * इस बे6स लिस्ट कंट्रोलर क्लास को एप्लीकेशन के सारे लिस्ट पेजेज इन्हेरिट करते
  * है। एसकेअंदर किसी भी लिस्ट पेज के सर्च एवं पेजिनेशन के लॉजिक लिखे गए है
  * 
  * @author Rays EdTech

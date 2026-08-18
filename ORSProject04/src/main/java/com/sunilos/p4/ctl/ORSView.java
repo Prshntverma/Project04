@@ -186,7 +186,22 @@ public interface ORSView {
 	public String PRODUCT_M_CTL = APP_CONTEXT + "/ctl/ProductMCtl";
 	public String PRODUCT_M_LIST_CTL = APP_CONTEXT + "/ctl/ProductMListCtl";
 	
+//	=====================customer==================================
 	
+	public String CUSTOMER_M_CTL = APP_CONTEXT + "/ctl/CustomerMCtl";
+	public String CUSTOMER_M_LIST_CTL = APP_CONTEXT + "/ctl/CustomerMListCtl";
+	public String CUSTOMER_M_VIEW = PAGE_FOLDER +"/CustomerMView.jsp";
+	public String CUSTOMER_M_LIST_VIEW = PAGE_FOLDER + "/CustomerMListView.jsp";
+	
+// =========================employeee======================================
+	
+	public String EMP_CTL = APP_CONTEXT + "/ctl/EmpModelCtl";
+
+	public String EMP_LIST_CTL = APP_CONTEXT + "/ctl/EmpModelListCtl";
+
+	public String EMP_VIEW = PAGE_FOLDER + "/EmpView.jsp";
+
+	public String EMP_LIST_VIEW = PAGE_FOLDER + "/EmpListView.jsp";
 	
 	
 	

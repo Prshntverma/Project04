@@ -338,7 +338,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.DEPARTMENT_LIST_CTL%>"> <i
 								class="bi bi-building me-2 text-success"></i>  Department List
 						</a></li>
-						<!--Exam module  -->
+						<%-- <!--Exam module  -->
 						
 						<li>
 							<h6 class="dropdown-header text-uppercase text-info small">
@@ -368,9 +368,9 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.BRANCH_LIST_CTL%>"> <i
 								class="bi bi-building me-2 text-success"></i>  Branch List
-						</a></li>
+						</a></li> --%>
 	<!--,.............................insurance................................  -->
-					 	<li>
+					 	<%-- <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-shield-check me-1"></i> Insurance Manage
 							</h6>
@@ -384,7 +384,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.INSURANCE_LIST_CTL%>"> <i
 								class="bi bi-shield-check me-2 text-success"></i> Insurance List
-						</a></li> 
+						</a></li>  --%>
   <!--................................ health Care moduleeeee.........--------------------------  -->
               <%--  <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
@@ -437,6 +437,41 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
  --%>
 
 
+             <li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-home me-1"></i> Customer
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.CUSTOMER_M_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add customer
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.CUSTOMER_M_LIST_CTL%>"> <i
+								class="bi bi-shield-check me-2 text-success"></i>  customer List
+						</a></li> 
+						
+						
+						 <li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-office me-1"></i> Employee
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.EMP_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add emp
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.EMP_LIST_CTL%>"> <i
+								class="bi bi-shield-check me-2 text-success"></i>  Emp List
+						</a></li> 
+						
+						
+						
 
        
 
