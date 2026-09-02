@@ -295,7 +295,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						</a></li>
 					</ul></li>
 
-				<!-- ----------Daily Module --- -->
+				<!------ -----------Daily Module ------------------------------------------------------------------ -->
 				<li class="nav-item dropdown"><a
 					class="nav-link dropdown-toggle px-3 py-3" href="#"
 					data-bs-toggle="dropdown" aria-expanded="false"> <i
@@ -324,7 +324,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><hr class="dropdown-divider border-secondary"></li>
 
 						<!--department-->
-						<li>
+						<%-- <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-building me-1"></i> Department Manage
 							</h6>
@@ -336,8 +336,90 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						</a></li>
 						<li><a class="dropdown-item"
 							href="<%=ORSView.DEPARTMENT_LIST_CTL%>"> <i
-								class="bi bi-building me-2 text-success"></i>  Department List
+								class="bi bi-building me-2 text-success"></i> Department List
+						</a></li> --%>
+
+						<%-- <li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-book me-1"></i> Course Detail Manage
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.COURSE_MODULE_CTL%>"> <i
+								class="bi bi-plus-circle me-2 text-success"></i> Add Course
+								Detail
 						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.COURSE_MODULE_LIST_CTL%>"> <i
+								class="bi bi-book me-2 text-success"></i> Course Detail List
+						</a></li> --%>
+
+						<!-- ================================================================================= -->
+
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-calendar-event me-1"></i> Event Manage
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item" href="<%=ORSView.EVENT_CTL%>">
+								<i class="bi bi-plus-circle me-2 text-success"></i> Add Event
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.EVENT_LIST_CTL%>"> <i
+								class="bi bi-calendar-event me-2 text-success"></i> Event List
+						</a></li>
+
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-tools me-1"></i> Service Manage
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item" href="<%=ORSView.SERVICE_CTL%>">
+								<i class="bi bi-plus-circle me-2 text-success"></i> Add Service
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.SERVICE_LIST_CTL%>"> <i
+								class="bi bi-tools me-2 text-success"></i> Service List
+						</a></li>
+						<!-- ---------------------------vendor------------------------ -->
+
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-shop me-1"></i> Vendor Manage
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item" href="<%=ORSView.VENDOR_CTL%>">
+								<i class="bi bi-plus-circle me-2 text-success"></i> Add Vendor
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.VENDOR_LIST_CTL%>"> <i
+								class="bi bi-shop me-2 text-success"></i> Vendor List
+						</a></li>
+						<!--   ------------------------------library----------------------------------  -->
+						<%-- <li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-building me-1"></i> Library Manage
+							</h6>
+						</li>
+
+						<li><a class="dropdown-item" href="<%=ORSView.LIBRARY_CTL%>">
+								<i class="bi bi-plus-circle me-2 text-success"></i> Add Library
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.LIBRARY_LIST_CTL%>"> <i
+								class="bi bi-building me-2 text-success"></i> Library List
+						</a></li> --%>
+
+
 						<%-- <!--Exam module  -->
 						
 						<li>
@@ -369,8 +451,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.BRANCH_LIST_CTL%>"> <i
 								class="bi bi-building me-2 text-success"></i>  Branch List
 						</a></li> --%>
-	<!--,.............................insurance................................  -->
-					 	<%-- <li>
+						<!--,.............................insurance................................  -->
+						<%-- <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-shield-check me-1"></i> Insurance Manage
 							</h6>
@@ -385,8 +467,8 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.INSURANCE_LIST_CTL%>"> <i
 								class="bi bi-shield-check me-2 text-success"></i> Insurance List
 						</a></li>  --%>
-  <!--................................ health Care moduleeeee.........--------------------------  -->
-              <%--  <li>
+						<!--................................ health Care moduleeeee.........--------------------------  -->
+						<%--  <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-home me-1"></i> Health care
 							</h6>
@@ -401,7 +483,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.HEALTHCARE_LIST_CTL%>"> <i
 								class="bi bi-shield-check me-2 text-success"></i>  HC List
 						</a></li> --%>
-<%--                <li>
+						<%--                <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-home me-1"></i> Customer
 							</h6>
@@ -416,9 +498,9 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.CUSTOMER_LIST_CTL%>"> <i
 								class="bi bi-shield-check me-2 text-success"></i>  customer List
 						</a></li> --%>
- <!--====================================================================================  -->
+						<!--====================================================================================  -->
 
-<%-- 
+						<%-- 
       <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-home me-1"></i> Product
@@ -437,7 +519,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
  --%>
 
 
-             <li>
+						<%-- <li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-home me-1"></i> Customer
 							</h6>
@@ -450,11 +532,13 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 
 						<li><a class="dropdown-item"
 							href="<%=ORSView.CUSTOMER_M_LIST_CTL%>"> <i
-								class="bi bi-shield-check me-2 text-success"></i>  customer List
-						</a></li> 
-						
-						
-						 <li>
+								class="bi bi-shield-check me-2 text-success"></i> customer List
+						</a></li>
+
+
+						<li> --%>
+						<%-- 
+						 
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-office me-1"></i> Employee
 							</h6>
@@ -468,18 +552,31 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.EMP_LIST_CTL%>"> <i
 								class="bi bi-shield-check me-2 text-success"></i>  Emp List
-						</a></li> 
-						
-						
-						
+						</a></li>  --%>
+						<li>
+							<h6 class="dropdown-header text-uppercase text-info small">
+								<i class="bi bi-building me-1"></i> Hotel
+							</h6>
+						</li>
 
-       
+						<li><a class="dropdown-item" href="<%=ORSView.HOTEL_CTL%>">
+								<i class="bi bi-plus-circle me-2 text-success"></i> Add Hotel
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.HOTEL_LIST_CTL%>"> <i
+								class="bi bi-building me-2 text-success"></i> Hotel List
+						</a></li>
+
+
+
+
 
 
 
 
 					</ul></li>
-					
+
 				<%
 				}
 				%>

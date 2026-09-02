@@ -39,6 +39,17 @@ public class EmailMessage {
 	/**
 	 * Contains message
 	 */
+	private String attachment = null ;
+	
+	
+	public String getAttachment() {
+		return attachment;
+	}
+
+	public void setAttachment(String attachment) {
+		this.attachment = attachment;
+	}
+
 	private String message = null;
 
 	/**

@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.12.2.final using JasperReports Library version 6.12.2-75c5e90a222ab406e416cbf590a5397028a52de3  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="hotel" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="921fd99f-4c1a-486f-89a3-e1c2f9756b50">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="myAdapter"/>
+	<queryString language="SQL">
+		<![CDATA[select id,hotelName,location,rating,contactNo from hotel]]>
+	</queryString>
+	<field name="id" class="java.lang.Long">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel"/>
+	</field>
+	<field name="hotelName" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="hotelName"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel"/>
+	</field>
+	<field name="location" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="location"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel"/>
+	</field>
+	<field name="rating" class="java.lang.Double">
+		<property name="com.jaspersoft.studio.field.label" value="rating"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel"/>
+	</field>
+	<field name="contactNo" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="contactNo"/>
+		<property name="com.jaspersoft.studio.field.tree.path" value="hotel"/>
+	</field>
+	<group name="id">
+		<groupExpression><![CDATA[$F{id}]]></groupExpression>
+	</group>
+	<group name="hotelName">
+		<groupExpression><![CDATA[$F{hotelName}]]></groupExpression>
+	</group>
+	<group name="location">
+		<groupExpression><![CDATA[$F{location}]]></groupExpression>
+	</group>
+	<group name="rating">
+		<groupExpression><![CDATA[$F{rating}]]></groupExpression>
+	</group>
+	<group name="contactNo">
+		<groupExpression><![CDATA[$F{contactNo}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="200" y="20" width="160" height="30" uuid="f1bfe47e-8647-43cf-9490-631c20b3d364"/>
+				<textElement>
+					<font size="20"/>
+				</textElement>
+				<text><![CDATA[Hotel List Report]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="32" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<staticText>
+				<reportElement x="0" y="0" width="111" height="30" uuid="05fd9919-0dfd-4b94-a763-61a41a00c960">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0966c395-4800-4c08-b50f-cc8b7fab74d3"/>
+				</reportElement>
+				<text><![CDATA[id]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="0" width="111" height="30" uuid="bc72c1bf-ba06-4a0d-83a5-9461d70ab4dc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="930520aa-aa92-4b1d-9270-d3819e0387df"/>
+				</reportElement>
+				<text><![CDATA[hotelName]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="222" y="0" width="111" height="30" uuid="1fee4b64-ee3a-4218-b4b3-f21af4abe9e4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67620b69-d920-47a5-a5e8-ee7f4df2133a"/>
+				</reportElement>
+				<text><![CDATA[location]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="333" y="0" width="111" height="30" uuid="8a8341a3-b02f-4c24-a4de-f582d79707a1">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31481662-2eaf-45cc-8a09-179cb5571bf1"/>
+				</reportElement>
+				<text><![CDATA[rating]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="0" width="111" height="30" uuid="555f89af-2d14-465f-85d4-2fc63ea21858">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3471160e-d13b-4ab5-bd10-1782488d68f7"/>
+				</reportElement>
+				<text><![CDATA[contactNo]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<property name="com.jaspersoft.studio.unit.height" value="px"/>
+			<textField>
+				<reportElement x="0" y="0" width="111" height="30" uuid="4bdd77ee-096a-45b0-a45d-afb07fc421f8">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="0966c395-4800-4c08-b50f-cc8b7fab74d3"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="0" width="111" height="30" uuid="db54c4be-619a-40e4-8fb2-602e49579c7d">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="930520aa-aa92-4b1d-9270-d3819e0387df"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{hotelName}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="222" y="0" width="111" height="30" uuid="35783c3c-9990-4864-ad02-96c284a24680">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="67620b69-d920-47a5-a5e8-ee7f4df2133a"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{location}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="333" y="0" width="111" height="30" uuid="b1766717-7f32-438f-9188-2de4134f38a4">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="31481662-2eaf-45cc-8a09-179cb5571bf1"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{rating}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="444" y="0" width="111" height="30" uuid="8a2172bb-09fc-4a88-99c6-f32320b5b39a">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="3471160e-d13b-4ab5-bd10-1782488d68f7"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{contactNo}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

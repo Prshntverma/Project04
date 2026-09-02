@@ -151,4 +151,15 @@ public class DataUtility {
 		return baos.toString();
 	}
 
+	public static Double getDouble(String val) {
+	try {
+		if (val != null && val.trim().length() > 0) {
+			return Double.parseDouble(val.trim());
+		}
+	} catch (Exception e) {
+		return 0.0;
+	}
+	return 0.0;
+}
+
 }

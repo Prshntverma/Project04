@@ -74,7 +74,7 @@ genderMap.put("F", "Female");
 						<label class="form-label fw-semibold">Last Name <span
 							class="text-danger">*</span></label> <input type="text" name="lastName"
 							class="form-control"
-							value="=l-kom88888888888888888888888888888888888888888888888888888888888888888888888hq<%=DataUtility.getStringData(bean.getLastName())%>">
+							value="<%=DataUtility.getStringData(bean.getLastName())%>">
 						<div class="text-danger small mt-1"><%=ServletUtility.getErrorMessage("lastName", request)%></div>
 					</div>
 				</div>

@@ -171,30 +171,29 @@ public interface ORSView {
 
 	public String HEALTHCARE_REPORT_CTL = APP_CONTEXT + "/ctl/HealthcareReportCtl";
 
-
 //   =======================customer module ==================================//
-   
+
 	public String CUSTOMER_CTL = APP_CONTEXT + "/ctl/CustomerCtl";
 	public String CUSTOMER_LIST_CTL = APP_CONTEXT + "/ctl/CustomerListCtl";
-	public String CUSTOMER_VIEW = PAGE_FOLDER +"/CustomerView.jsp";
+	public String CUSTOMER_VIEW = PAGE_FOLDER + "/CustomerView.jsp";
 	public String CUSTOMER_LIST_VIEW = PAGE_FOLDER + "/CustomerListView.jsp";
-	
+
 //	=======================product ============================== // 
-	
-	public String PRODUCT_M_VIEW = PAGE_FOLDER  + "/ProductMView.jsp";
-	public String PRODUCT_M_LIST_VIEW = PAGE_FOLDER  + "/ProductMListView.jsp";
+
+	public String PRODUCT_M_VIEW = PAGE_FOLDER + "/ProductMView.jsp";
+	public String PRODUCT_M_LIST_VIEW = PAGE_FOLDER + "/ProductMListView.jsp";
 	public String PRODUCT_M_CTL = APP_CONTEXT + "/ctl/ProductMCtl";
 	public String PRODUCT_M_LIST_CTL = APP_CONTEXT + "/ctl/ProductMListCtl";
-	
+
 //	=====================customer==================================
-	
+
 	public String CUSTOMER_M_CTL = APP_CONTEXT + "/ctl/CustomerMCtl";
 	public String CUSTOMER_M_LIST_CTL = APP_CONTEXT + "/ctl/CustomerMListCtl";
-	public String CUSTOMER_M_VIEW = PAGE_FOLDER +"/CustomerMView.jsp";
+	public String CUSTOMER_M_VIEW = PAGE_FOLDER + "/CustomerMView.jsp";
 	public String CUSTOMER_M_LIST_VIEW = PAGE_FOLDER + "/CustomerMListView.jsp";
-	
+
 // =========================employeee======================================
-	
+
 	public String EMP_CTL = APP_CONTEXT + "/ctl/EmpModelCtl";
 
 	public String EMP_LIST_CTL = APP_CONTEXT + "/ctl/EmpModelListCtl";
@@ -202,11 +201,85 @@ public interface ORSView {
 	public String EMP_VIEW = PAGE_FOLDER + "/EmpView.jsp";
 
 	public String EMP_LIST_VIEW = PAGE_FOLDER + "/EmpListView.jsp";
-	
-	
-	
-	
-	
-	
 
+	// ========================= Hotel ======================================
+
+	public String HOTEL_CTL = APP_CONTEXT + "/ctl/HotelCtl";
+
+	public String HOTEL_LIST_CTL = APP_CONTEXT + "/ctl/HotelListCtl";
+
+	public String HOTEL_VIEW = PAGE_FOLDER + "/HotelView.jsp";
+
+	public String HOTEL_LIST_VIEW = PAGE_FOLDER + "/HotelList.jsp";
+
+//	==========================course details module=====================================
+
+	public String COURSE_MODULE_CTL = APP_CONTEXT + "/ctl/CourseModuleCtl";
+
+	public String COURSE_MODULE_LIST_CTL = APP_CONTEXT + "/ctl/CourseModuleListCtl";
+
+	public String COURSE_MODULE_VIEW = PAGE_FOLDER + "/CourseModuleView.jsp";
+
+	public String COURSE_MODULE_LIST_VIEW = PAGE_FOLDER + "/CourseModuleListView.jsp";
+//	============================ service ============================================
+	
+	public String SERVICE_VIEW  = PAGE_FOLDER + "/ServiceView.jsp";
+
+	public String SERVICE_LIST_CTL = APP_CONTEXT + "/ctl/ServiceListCtl";
+
+	public String SERVICE_LIST_VIEW = PAGE_FOLDER + "/ServiceListView.jsp";
+
+	public String SERVICE_CTL  = APP_CONTEXT + "/ctl/ServiceCtl";
+	
+// ================================= Vendor =========================================
+	
+	public String VENDOR_LIST_CTL = APP_CONTEXT + "/ctl/VendorListCtl";
+
+	public String VENDOR_LIST_VIEW = PAGE_FOLDER + "/VendorListView.jsp";
+
+	public String VENDOR_CTL = APP_CONTEXT + "/ctl/VendorCtl";
+
+	public String VENDOR_VIEW = PAGE_FOLDER + "/VendorView.jsp";
+	
+	public String VENDOR_REPORT_CTL = APP_CONTEXT + "/ctl/VendorReportCtl";
+	
+	public String VENDOR_REPORT_VIEW = "/reports/VendorListReport.jrxml";
+	
+//	==========================libraryyyy============================================
+
+	public String LIBRARY_LIST_CTL = APP_CONTEXT + "/ctl/LibraryListCtl";
+
+	public String LIBRARY_LIST_VIEW = PAGE_FOLDER + "/LibraryListView.jsp";
+
+	public String LIBRARY_CTL = APP_CONTEXT + "/ctl/LibraryCtl";
+
+	public String LIBRARY_VIEW = PAGE_FOLDER + "/LibraryView.jsp";
+
+	public String LIBRARY_REPORT_CTL = APP_CONTEXT + "/ctl/LibraryReportCtl";
+
+	public String LIBRARY_REPORT_VIEW = "/reports/LibraryListReport.jrxml";
+	
+//	======================== EVENT MODULE ================================
+	
+	public String EVENT_LIST_CTL = APP_CONTEXT + "/ctl/EventListCtl";
+
+	public String EVENT_LIST_VIEW = PAGE_FOLDER + "/EventListView.jsp";
+
+	public String EVENT_CTL = APP_CONTEXT + "/ctl/EventCtl";
+
+	public String EVENT_VIEW = PAGE_FOLDER + "/EventView.jsp";
+
+	public String EVENT_REPORT_CTL = APP_CONTEXT + "/ctl/EventReportCtl";
+
+	public String EVENT_REPORT_VIEW = "/reports/EventListReport.jrxml";
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

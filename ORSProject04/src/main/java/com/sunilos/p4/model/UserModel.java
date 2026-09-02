@@ -212,7 +212,7 @@ public class UserModel extends BaseModel<UserBean> {
 
 	public UserBean authenticate(String login, String password) throws ApplicationException {
 		UserBean bean = findByLogin(login);
-		if (bean != null && bean.getPassword().equals(password)) {
+		if (bean != null && password != null && password.equals(bean.getPassword())) {
 			return bean;
 		} else {
 			return null;
@@ -432,7 +432,7 @@ public class UserModel extends BaseModel<UserBean> {
 		msg.setSubject("Password has been reset");
 		msg.setMessage(message);
 		msg.setMessageType(EmailMessage.HTML_MSG);
-
+        //msg.getAttachment();
 		EmailUtility.sendMail(msg);
 
 		return true;
