@@ -273,9 +273,19 @@ public interface ORSView {
 
 	public String EVENT_REPORT_VIEW = "/reports/EventListReport.jrxml";
 	
+//======================== Doctor Module =================================
 	
-	
-	
+	public String DOCTOR_LIST_CTL = APP_CONTEXT + "/ctl/DoctorListCtl";
+
+	public String DOCTOR_LIST_VIEW = PAGE_FOLDER + "/DoctorListView.jsp";
+
+	public String DOCTOR_CTL = APP_CONTEXT + "/ctl/DoctorCtl";
+
+	public String DOCTOR_VIEW = PAGE_FOLDER + "/DoctorView.jsp";
+
+	public String DOCTOR_REPORT_CTL = APP_CONTEXT + "/ctl/DoctorReportCtl";
+
+	public String DOCTOR_REPORT_VIEW = "/reports/DoctorListReport.jrxml";
 	
 	
 	

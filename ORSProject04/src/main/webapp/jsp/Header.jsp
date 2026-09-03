@@ -357,7 +357,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						</a></li> --%>
 
 						<!-- ================================================================================= -->
-
+						<%-- 
 						<li>
 							<h6 class="dropdown-header text-uppercase text-info small">
 								<i class="bi bi-calendar-event me-1"></i> Event Manage
@@ -371,7 +371,42 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 						<li><a class="dropdown-item"
 							href="<%=ORSView.EVENT_LIST_CTL%>"> <i
 								class="bi bi-calendar-event me-2 text-success"></i> Event List
+						</a></li> --%>
+
+						<li>
+
+							<h6 class="dropdown-header text-uppercase text-info small">
+
+								<i class="bi bi-person-badge me-1"></i> Doctor Manage
+
+							</h6>
+
+						</li>
+
+						<li><a class="dropdown-item" href="<%=ORSView.DOCTOR_CTL%>">
+
+								<i class="bi bi-plus-circle me-2 text-success"></i> Add Doctor
+
 						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.DOCTOR_LIST_CTL%>"> <i
+								class="bi bi-person-badge me-2 text-success"></i> Doctor List
+
+						</a></li>
+<!-- ====================================docter=============================================== -->
+
+
+
+
+
+
+
+
+
+
+
+
 
 						<li>
 							<h6 class="dropdown-header text-uppercase text-info small">
