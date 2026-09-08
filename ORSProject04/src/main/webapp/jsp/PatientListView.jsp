@@ -1,9 +1,14 @@
-
-<%@page import="com.sunilos.p4.ctl.EventListCtl"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8"><%@page
+	import="com.sunilos.p4.ctl.PatientListCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
-<%@page import="com.sunilos.p4.bean.EventBean"%>
+<%@page import="com.sunilos.p4.bean.PatientBean"%>
 <%@page import="java.util.List"%>
 <%@page import="java.util.Iterator"%>
 
@@ -16,7 +21,7 @@ int index = ((pageNo - 1) * pageSize) + 1;
 
 List list = ServletUtility.getList(request);
 
-Iterator<EventBean> it = list.iterator();
+Iterator<PatientBean> it = list.iterator();
 
 String _err = ServletUtility.getErrorMessage(request);
 
@@ -32,30 +37,31 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 
 			<h5 class="mb-0 fw-bold">
-				<i class="bi bi-calendar-event me-2"></i> Event List
+				<i class="bi bi-person-vcard me-2"></i> Patient List
 			</h5>
 
 			<div class="d-flex gap-2">
 
-				<a href="<%=ORSView.EVENT_REPORT_CTL%>" target="_blank"
+				<a href="<%=ORSView.PATIENT_REPORT_CTL%>" target="_blank"
 					class="btn btn-sm btn-warning fw-semibold"> <i
 					class="bi bi-file-earmark-pdf me-1"></i> Print PDF
 
-				</a> <a href="<%=ORSView.EVENT_REPORT_CTL%>?type=doc" target="_blank"
+				</a> <a href="<%=ORSView.PATIENT_REPORT_CTL%>?type=doc" target="_blank"
 					class="btn btn-sm btn-info fw-semibold"> <i
 					class="bi bi-file-earmark-word me-1"></i> Print DOC
 
-				</a> <a href="EventCtl"
+				</a> <a href="PatientCtl"
 					class="btn btn-sm btn-light text-primary fw-semibold"> <i
-					class="bi bi-plus-circle me-1"></i> Add Event
+					class="bi bi-plus-circle me-1"></i> Add Patient
 
 				</a>
 
 			</div>
+
 		</div>
 
 
-		<form action="<%=ORSView.EVENT_LIST_CTL%>" method="POST">
+		<form action="<%=ORSView.PATIENT_LIST_CTL%>" method="POST">
 
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 				type="hidden" name="pageSize" value="<%=pageSize%>">
@@ -64,11 +70,10 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			<div
 				class="p-3 bg-light border-bottom d-flex flex-wrap gap-2 align-items-center">
 
-				<input type="text" name="eventName"
+				<input type="text" name="patientName"
 					class="form-control form-control-sm" style="max-width: 250px;"
-					placeholder="Search by Event Name"
-					value="<%=ServletUtility.getParameter("eventName", request)%>">
-
+					placeholder="Search by Patient Name"
+					value="<%=ServletUtility.getParameter("patientName", request)%>">
 
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
@@ -96,7 +101,6 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			<div class="alert alert-danger py-2 mx-3 mt-3">
 
 				<i class="bi bi-exclamation-triangle-fill me-2"></i>
-
 				<%=_err%>
 
 			</div>
@@ -113,7 +117,6 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			<div class="alert alert-success py-2 mx-3 mt-3">
 
 				<i class="bi bi-check-circle-fill me-2"></i>
-
 				<%=_suc%>
 
 			</div>
@@ -137,13 +140,13 @@ String _suc = ServletUtility.getSuccessMessage(request);
 
 							<th>#</th>
 
-							<th>Event Name</th>
+							<th>Patient Name</th>
 
-							<th>Event Date</th>
+							<th>Disease</th>
 
-							<th>Venue</th>
+							<th>Doctor Name</th>
 
-							<th>Organizer</th>
+							<th>Admission Date</th>
 
 							<th>Action</th>
 
@@ -157,7 +160,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 						<%
 						while (it.hasNext()) {
 
-							EventBean bean = it.next();
+							PatientBean bean = it.next();
 						%>
 
 						<tr>
@@ -169,19 +172,19 @@ String _suc = ServletUtility.getSuccessMessage(request);
 							<td class="text-muted small"><%=index++%></td>
 
 
-							<td class="fw-semibold"><%=bean.getEventName()%></td>
+							<td class="fw-semibold"><%=bean.getPatientName()%></td>
 
 
-							<td><%=bean.getEventDate()%></td>
+							<td><%=bean.getDisease()%></td>
 
 
-							<td><%=bean.getVenue()%></td>
+							<td><%=bean.getDoctorName()%></td>
 
 
-							<td><%=bean.getOrganizer()%></td>
+							<td><%=bean.getAdmissionDate()%></td>
 
 
-							<td><a href="EventCtl?id=<%=bean.getId()%>"
+							<td><a href="PatientCtl?id=<%=bean.getId()%>"
 								class="btn btn-sm btn-outline-primary"> <i
 									class="bi bi-pencil"></i> Edit
 
@@ -211,4 +214,9 @@ String _suc = ServletUtility.getSuccessMessage(request);
 	</div>
 
 </div>
-```
+<title>Insert title here</title>
+</head>
+<body>
+
+</body>
+</html>

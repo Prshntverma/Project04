@@ -394,7 +394,32 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 								class="bi bi-person-badge me-2 text-success"></i> Doctor List
 
 						</a></li>
-<!-- ====================================docter=============================================== -->
+						<!-- ====================================docter=============================================== -->
+						<!-- ====================================patient=============================================== -->
+
+						<li>
+
+							<h6 class="dropdown-header text-uppercase text-info small">
+
+								<i class="bi bi-person-vcard me-1"></i> Patient Manage
+
+							</h6>
+
+						</li>
+
+						<li><a class="dropdown-item" href="<%=ORSView.PATIENT_CTL%>">
+
+								<i class="bi bi-plus-circle me-2 text-success"></i> Add Patient
+
+						</a></li>
+
+						<li><a class="dropdown-item"
+							href="<%=ORSView.PATIENT_LIST_CTL%>"> <i
+								class="bi bi-person-vcard me-2 text-success"></i> Patient List
+
+						</a></li>
+
+    	<!-- ====================================patient=============================================== -->
 
 
 
