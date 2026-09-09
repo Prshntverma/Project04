@@ -1,4 +1,5 @@
 services:
+
   mysql:
     image: mysql:8.0
     container_name: ORSProject4-mysql
@@ -22,9 +23,6 @@ services:
       - mynetwork
     depends_on:
       - mysql
-    environment:
-      - JAVA_TOOL_OPTIONS=-Denv=docker  #  Important for JDBCDataSource
-      - DATABASE_URL=jdbc:mysql://mysql:3306/p04
 
 networks:
   mynetwork:

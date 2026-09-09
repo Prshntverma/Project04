@@ -222,17 +222,17 @@ public interface ORSView {
 
 	public String COURSE_MODULE_LIST_VIEW = PAGE_FOLDER + "/CourseModuleListView.jsp";
 //	============================ service ============================================
-	
-	public String SERVICE_VIEW  = PAGE_FOLDER + "/ServiceView.jsp";
+
+	public String SERVICE_VIEW = PAGE_FOLDER + "/ServiceView.jsp";
 
 	public String SERVICE_LIST_CTL = APP_CONTEXT + "/ctl/ServiceListCtl";
 
 	public String SERVICE_LIST_VIEW = PAGE_FOLDER + "/ServiceListView.jsp";
 
-	public String SERVICE_CTL  = APP_CONTEXT + "/ctl/ServiceCtl";
-	
+	public String SERVICE_CTL = APP_CONTEXT + "/ctl/ServiceCtl";
+
 // ================================= Vendor =========================================
-	
+
 	public String VENDOR_LIST_CTL = APP_CONTEXT + "/ctl/VendorListCtl";
 
 	public String VENDOR_LIST_VIEW = PAGE_FOLDER + "/VendorListView.jsp";
@@ -240,11 +240,11 @@ public interface ORSView {
 	public String VENDOR_CTL = APP_CONTEXT + "/ctl/VendorCtl";
 
 	public String VENDOR_VIEW = PAGE_FOLDER + "/VendorView.jsp";
-	
+
 	public String VENDOR_REPORT_CTL = APP_CONTEXT + "/ctl/VendorReportCtl";
-	
+
 	public String VENDOR_REPORT_VIEW = "/reports/VendorListReport.jrxml";
-	
+
 //	==========================libraryyyy============================================
 
 	public String LIBRARY_LIST_CTL = APP_CONTEXT + "/ctl/LibraryListCtl";
@@ -258,9 +258,9 @@ public interface ORSView {
 	public String LIBRARY_REPORT_CTL = APP_CONTEXT + "/ctl/LibraryReportCtl";
 
 	public String LIBRARY_REPORT_VIEW = "/reports/LibraryListReport.jrxml";
-	
+
 //	======================== EVENT MODULE ================================
-	
+
 	public String EVENT_LIST_CTL = APP_CONTEXT + "/ctl/EventListCtl";
 
 	public String EVENT_LIST_VIEW = PAGE_FOLDER + "/EventListView.jsp";
@@ -272,9 +272,9 @@ public interface ORSView {
 	public String EVENT_REPORT_CTL = APP_CONTEXT + "/ctl/EventReportCtl";
 
 	public String EVENT_REPORT_VIEW = "/reports/EventListReport.jrxml";
-	
+
 //======================== Doctor Module =================================
-	
+
 	public String DOCTOR_LIST_CTL = APP_CONTEXT + "/ctl/DoctorListCtl";
 
 	public String DOCTOR_LIST_VIEW = PAGE_FOLDER + "/DoctorListView.jsp";
@@ -286,9 +286,9 @@ public interface ORSView {
 	public String DOCTOR_REPORT_CTL = APP_CONTEXT + "/ctl/DoctorReportCtl";
 
 	public String DOCTOR_REPORT_VIEW = "/reports/DoctorListReport.jrxml";
-	
+
 //	=========================== Patient Module ===============================
-	
+
 	public String PATIENT_LIST_CTL = APP_CONTEXT + "/ctl/PatientListCtl";
 
 	public String PATIENT_LIST_VIEW = PAGE_FOLDER + "/PatientListView.jsp";
@@ -300,8 +300,19 @@ public interface ORSView {
 	public String PATIENT_REPORT_CTL = APP_CONTEXT + "/ctl/PatientReportCtl";
 
 	public String PATIENT_REPORT_VIEW = "/reports/PatientListReport.jrxml";
-	
-	
-	
-	
+
+//	========================== Student ===================================
+
+	public String STUDENT_M_LIST_CTL = APP_CONTEXT + "/ctl/StudentMListCtl";
+
+	public String STUDENT_M_LIST_VIEW = PAGE_FOLDER + "/StudentMListView.jsp";
+
+	public String STUDENT_M_CTL = APP_CONTEXT + "/ctl/StudentMCtl";
+
+	public String STUDENT_M_VIEW = PAGE_FOLDER + "/StudentMView.jsp";
+
+	public String STUDENT_M_REPORT_CTL = APP_CONTEXT + "/ctl/StudentMReportCtl";
+
+	public String STUDENT_M_REPORT_VIEW = "/reports/StudentMListReport.jrxml";
+
 }
