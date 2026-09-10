@@ -315,4 +315,18 @@ public interface ORSView {
 
 	public String STUDENT_M_REPORT_VIEW = "/reports/StudentMListReport.jrxml";
 
+//	===========================order==================================================
+	
+	public String ORDER_LIST_CTL = APP_CONTEXT + "/ctl/OrderListCtl";
+
+	public String ORDER_LIST_VIEW = PAGE_FOLDER + "/OrderListView.jsp";
+
+	public String ORDER_CTL = APP_CONTEXT + "/ctl/OrderCtl";
+
+	public String ORDER_VIEW = PAGE_FOLDER + "/OrderView.jsp";
+
+	public String ORDER_REPORT_CTL = APP_CONTEXT + "/ctl/OrderReportCtl";
+
+	public String ORDER_REPORT_VIEW = "/reports/OrderListReport.jrxml";
+
 }

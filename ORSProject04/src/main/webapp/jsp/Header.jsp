@@ -421,19 +421,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 
 				<!-- ====================================patient=============================================== -->
 
-
-
-
-
-
-
-
-
-
-
-
-
-				<li>
+				<%-- <li>
 					<h6 class="dropdown-header text-uppercase text-info small">
 						<i class="bi bi-tools me-1"></i> Service Manage
 					</h6>
@@ -446,7 +434,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				<li><a class="dropdown-item"
 					href="<%=ORSView.SERVICE_LIST_CTL%>"> <i
 						class="bi bi-tools me-2 text-success"></i> Service List
-				</a></li>
+				</a></li> --%>
 				<!-- ---------------------------vendor------------------------ -->
 
 				<%-- <li>
@@ -613,6 +601,41 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 							href="<%=ORSView.EMP_LIST_CTL%>"> <i
 								class="bi bi-shield-check me-2 text-success"></i>  Emp List
 						</a></li>  --%>
+
+				<!-- ==================================order ====================================== -->
+
+
+				<li>
+
+					<h6 class="dropdown-header text-uppercase text-info small">
+
+						<i class="bi bi-cart me-1"></i> Order
+
+					</h6>
+
+				</li>
+
+				<li><a class="dropdown-item" href="<%=ORSView.ORDER_CTL%>">
+
+						<i class="bi bi-plus-circle me-2 text-success"></i> Add Order
+
+				</a></li>
+
+				<li><a class="dropdown-item" href="<%=ORSView.ORDER_LIST_CTL%>">
+
+						<i class="bi bi-cart me-2 text-success"></i> Order List
+
+				</a></li>
+
+
+
+
+
+
+
+
+
+
 				<li>
 					<h6 class="dropdown-header text-uppercase text-info small">
 						<i class="bi bi-building me-1"></i> Hotel
