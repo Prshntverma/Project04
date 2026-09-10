@@ -2,6 +2,8 @@
 <%@page import="com.sunilos.p4.ctl.OrderCtl"%>
 
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="com.sunilos.p4.util.HTMLUtility"%>
 
 <%@page import="com.sunilos.p4.util.DataUtility"%>
 
@@ -14,6 +16,10 @@
 String _suc = ServletUtility.getSuccessMessage(request);
 
 String _err = ServletUtility.getErrorMessage(request);
+
+HashMap Map = new HashMap();
+Map.put("E", "Eletronic");
+Map.put("H", "Harder");
 %>
 
 <div class="container py-4" style="max-width: 640px;">
@@ -114,7 +120,7 @@ String _err = ServletUtility.getErrorMessage(request);
 
 
 				<!-- Quantity -->
-
+				<%-- 
 				<div class="mb-3">
 
 					<label class="form-label fw-semibold"> Quantity <span
@@ -128,17 +134,35 @@ String _err = ServletUtility.getErrorMessage(request);
 
 					</div>
 
+				</div> --%>
+
+				<div class="row g-3 mb-3">
+					<div class="col-md-6">
+						<label class="form-label fw-semibold">Category</label>
+						<%=HTMLUtility.getList("E", bean.getCategory(),Map)%>
+					</div>
+					<div class="col-md-6">
+						<label class="form-label fw-semibold">Category</label>
+						<%=HTMLUtility.getList("H", bean.getCategory(),Map)%>
+					</div>
+						
+					
 				</div>
 
 
 				<!-- Category -->
 
-				<div class="mb-4">
+				<%-- <div class="mb-4">
 
-					<label class="form-label fw-semibold"> Category <span
+					<!-- 	<label class="form-label fw-semibold"> Category <span
 						class="text-danger">*</span>
-					</label> <input type="text" name="category" class="form-control"
+					</label> -->
+					<input type="text" name="category" class="form-control"
 						value="<%=DataUtility.getStringData(bean.getCategory())%>">
+					<div class="col-md-6">
+						<label class="form-label fw-semibold">Gender</label>
+						<%=HTMLUtility.getList("category", bean.getCategory(), Map)%>
+					</div> --%>
 
 					<div class="text-danger small mt-1">
 
