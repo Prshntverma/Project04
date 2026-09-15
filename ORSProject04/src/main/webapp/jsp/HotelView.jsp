@@ -1,7 +1,11 @@
+
 <%@page import="com.sunilos.p4.ctl.HotelCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
+<%@page import="com.sunilos.p4.ctl.ORSView"%>
+<%@page import="com.sunilos.p4.util.HTMLUtility"%>
 <%@page import="com.sunilos.p4.util.DataUtility"%>
 <%@page import="com.sunilos.p4.util.ServletUtility"%>
+<%@page import="java.util.HashMap"%>
 
 <jsp:useBean id="bean" class="com.sunilos.p4.bean.HotelBean"
 	scope="request"></jsp:useBean>
@@ -9,9 +13,20 @@
 <%
 String _suc = ServletUtility.getSuccessMessage(request);
 String _err = ServletUtility.getErrorMessage(request);
+
+HashMap locationMap = new HashMap();
+
+locationMap.put("Gwalior", "Gwalior");
+locationMap.put("Indore", "Indore");
+locationMap.put("Bhopal", "Bhopal");
+locationMap.put("Gurugram", "Gurugram");
+locationMap.put("Noida", "Noida");
+locationMap.put("Delhi", "Delhi");
+locationMap.put("Mumbai", "Mumbai");
+locationMap.put("Pune", "Pune");
 %>
 
-<div class="container py-4" style="max-width: 640px;">
+<div class="container py-4" style="max-width: 680px;">
 
 	<div class="card border-0 shadow-sm rounded-4 overflow-hidden">
 
@@ -30,11 +45,10 @@ String _err = ServletUtility.getErrorMessage(request);
 			<%
 			if (_suc != null && !_suc.isEmpty()) {
 			%>
-
 			<div class="alert alert-success py-2">
-				<i class="bi bi-check-circle-fill me-2"></i><%=_suc%>
+				<i class="bi bi-check-circle-fill me-2"></i>
+				<%=_suc%>
 			</div>
-
 			<%
 			}
 			%>
@@ -42,16 +56,16 @@ String _err = ServletUtility.getErrorMessage(request);
 			<%
 			if (_err != null && !_err.isEmpty()) {
 			%>
-
 			<div class="alert alert-danger py-2">
-				<i class="bi bi-exclamation-triangle-fill me-2"></i><%=_err%>
+				<i class="bi bi-exclamation-triangle-fill me-2"></i>
+				<%=_err%>
 			</div>
-
 			<%
 			}
 			%>
 
-			<form action="HotelCtl" method="POST">
+
+			<form name="hotelForm" action="<%=ORSView.HOTEL_CTL%>" method="POST">
 
 				<input type="hidden" name="id" value="<%=bean.getId()%>"> <input
 					type="hidden" name="createdBy" value="<%=bean.getCreatedBy()%>">
@@ -80,13 +94,14 @@ String _err = ServletUtility.getErrorMessage(request);
 				</div>
 
 
-				<!-- Location -->
+				<!-- Location Dropdown -->
 				<div class="mb-3">
 
 					<label class="form-label fw-semibold"> Location <span
 						class="text-danger">*</span>
-					</label> <input type="text" name="location" class="form-control"
-						value="<%=DataUtility.getStringData(bean.getLocation())%>">
+					</label>
+
+					<%=HTMLUtility.getList("location", bean.getLocation(), locationMap)%>
 
 					<div class="text-danger small mt-1">
 						<%=ServletUtility.getErrorMessage("location", request)%>
@@ -95,37 +110,39 @@ String _err = ServletUtility.getErrorMessage(request);
 				</div>
 
 
-				<!-- Rating -->
-				<div class="mb-3">
+				<!-- Rating + Contact -->
+				<div class="row g-3 mb-3">
 
-					<label class="form-label fw-semibold"> Rating <span
-						class="text-danger">*</span>
-					</label> <input type="number" name="rating" class="form-control" step="0.1"
-						min="0" max="5" value="<%=bean.getRating()%>">
+					<div class="col-md-6">
 
-					<div class="text-danger small mt-1">
-						<%=ServletUtility.getErrorMessage("rating", request)%>
+						<label class="form-label fw-semibold"> Rating <span
+							class="text-danger">*</span>
+						</label> <input type="text" name="rating" class="form-control"
+							value="<%=DataUtility.getStringData(bean.getRating())%>">
+
+						<div class="text-danger small mt-1">
+							<%=ServletUtility.getErrorMessage("rating", request)%>
+						</div>
+
+					</div>
+
+
+					<div class="col-md-6">
+
+						<label class="form-label fw-semibold"> Contact No <span
+							class="text-danger">*</span>
+						</label> <input type="text" name="contactNo" class="form-control"
+							value="<%=DataUtility.getStringData(bean.getContactNo())%>">
+
+						<div class="text-danger small mt-1">
+							<%=ServletUtility.getErrorMessage("contactNo", request)%>
+						</div>
+
 					</div>
 
 				</div>
 
 
-				<!-- Contact Number -->
-				<div class="mb-4">
-
-					<label class="form-label fw-semibold"> Contact Number <span
-						class="text-danger">*</span>
-					</label> <input type="text" name="contactNo" class="form-control"
-						value="<%=DataUtility.getStringData(bean.getContactNo())%>">
-
-					<div class="text-danger small mt-1">
-						<%=ServletUtility.getErrorMessage("contactNo", request)%>
-					</div>
-
-				</div>
-
-
-				<!-- Buttons -->
 				<div class="d-flex gap-2 pt-2 border-top">
 
 					<button type="submit" name="operation" value="<%=BaseCtl.OP_SAVE%>"
@@ -147,5 +164,5 @@ String _err = ServletUtility.getErrorMessage(request);
 
 		</div>
 	</div>
-
 </div>
+

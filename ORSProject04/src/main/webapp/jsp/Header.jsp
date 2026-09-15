@@ -628,10 +628,20 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				</a></li>
 
 
+				<li>
+					<h6 class="dropdown-header text-uppercase text-i nfo small">
+						<i class="bi bi-tools me-1"></i> Service Manage
+					</h6>
+				</li>
 
+				<li><a class="dropdown-item" href="<%=ORSView.SERVICE_CTL%>">
+						<i class="bi bi-plus-circle me-2 text-success"></i> Add Service
+				</a></li>
 
-
-
+				<li><a class="dropdown-item"
+					href="<%=ORSView.SERVICE_LIST_CTL%>"> <i
+						class="bi bi-tools me-2 text-success"></i> Service List
+				</a></li>
 
 
 

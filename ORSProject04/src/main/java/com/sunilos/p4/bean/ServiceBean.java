@@ -11,7 +11,6 @@ public class ServiceBean extends BaseBean {
 	 private String serviceCategory;
 	 
 	 
-	 
 	public String getServiceName() {
 		return serviceName;
 	}

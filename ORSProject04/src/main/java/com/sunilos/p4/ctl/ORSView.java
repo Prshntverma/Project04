@@ -212,6 +212,10 @@ public interface ORSView {
 
 	public String HOTEL_LIST_VIEW = PAGE_FOLDER + "/HotelList.jsp";
 
+	public String HOTEL_REPORT_CTL = APP_CONTEXT + "/ctl/HotelReportCtl";
+
+	public String HOTEL_REPORT_VIEW = "/reports/HotelListReport.jrxml";
+
 //	==========================course details module=====================================
 
 	public String COURSE_MODULE_CTL = APP_CONTEXT + "/ctl/CourseModuleCtl";
@@ -222,6 +226,8 @@ public interface ORSView {
 
 	public String COURSE_MODULE_LIST_VIEW = PAGE_FOLDER + "/CourseModuleListView.jsp";
 //	============================ service ============================================
+	
+	// ================================= Service =========================================
 
 	public String SERVICE_VIEW = PAGE_FOLDER + "/ServiceView.jsp";
 
@@ -230,6 +236,10 @@ public interface ORSView {
 	public String SERVICE_LIST_VIEW = PAGE_FOLDER + "/ServiceListView.jsp";
 
 	public String SERVICE_CTL = APP_CONTEXT + "/ctl/ServiceCtl";
+
+	public String SERVICE_REPORT_CTL = APP_CONTEXT + "/ctl/ServiceReportCtl";
+
+	public String SERVICE_REPORT_VIEW = "/reports/ServiceListReport.jrxml";
 
 // ================================= Vendor =========================================
 
@@ -316,7 +326,7 @@ public interface ORSView {
 	public String STUDENT_M_REPORT_VIEW = "/reports/StudentMListReport.jrxml";
 
 //	===========================order==================================================
-	
+
 	public String ORDER_LIST_CTL = APP_CONTEXT + "/ctl/OrderListCtl";
 
 	public String ORDER_LIST_VIEW = PAGE_FOLDER + "/OrderListView.jsp";

@@ -1,3 +1,4 @@
+
 <%@page import="com.sunilos.p4.ctl.ServiceListCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
@@ -31,8 +32,25 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			style="background: linear-gradient(135deg, #0d2137 0%, #1565c0 100%);">
 
 			<h5 class="mb-0 fw-bold">
+
 				<i class="bi bi-tools me-2"></i> Service List
+
 			</h5>
+
+			<div class="d-flex gap-2">
+
+				<a href="<%=ORSView.SERVICE_REPORT_CTL%>" target="_blank"
+					class="btn btn-sm btn-warning fw-semibold"> <i
+					class="bi bi-file-earmark-pdf me-1"></i> Print PDF
+				</a> <a href="<%=ORSView.SERVICE_REPORT_CTL%>?type=doc" target="_blank"
+					class="btn btn-sm btn-info fw-semibold"> <i
+					class="bi bi-file-earmark-word me-1"></i> Print DOC
+				</a> <a href="ServiceCtl"
+					class="btn btn-sm btn-light text-primary fw-semibold"> <i
+					class="bi bi-plus-circle me-1"></i> Add Service
+				</a>
+
+			</div>
 
 		</div>
 
@@ -119,6 +137,8 @@ String _suc = ServletUtility.getSuccessMessage(request);
 
 							<th>Price</th>
 
+							<th>Service Category</th>
+
 							<th>Action</th>
 
 						</tr>
@@ -145,6 +165,8 @@ String _suc = ServletUtility.getSuccessMessage(request);
 							<td><%=bean.getDescription()%></td>
 
 							<td><%=bean.getPrice()%></td>
+
+							<td><%=bean.getServiceCategory()%></td>
 
 							<td><a href="ServiceCtl?id=<%=bean.getId()%>"
 								class="btn btn-sm btn-outline-primary"> <i
@@ -175,3 +197,4 @@ String _suc = ServletUtility.getSuccessMessage(request);
 	</div>
 
 </div>
+

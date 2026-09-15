@@ -28,15 +28,13 @@ public class ServiceListCtl extends BaseListCtl<ServiceBean, ServiceModel> {
 	@Override
 	protected ServiceBean populateBean(HttpServletRequest request) {
 
+		log.debug("ServiceListCtl Method populateBean Started");
+
 		ServiceBean bean = new ServiceBean();
 
 		bean.setServiceName(DataUtility.getString(request.getParameter("serviceName")));
 
-		bean.setPrice(DataUtility.getDouble(request.getParameter("price")));
-
-		bean.setDescription(DataUtility.getString(request.getParameter("description")));
-
-		bean.setServiceCategory(DataUtility.getString(request.getParameter("serviceCategory")));
+		log.debug("ServiceListCtl Method populateBean Ended");
 
 		return bean;
 	}

@@ -114,8 +114,10 @@ public class ServiceModel extends BaseModel<ServiceBean> {
 
 			conn.setAutoCommit(false);
 
-			PreparedStatement pstmt = conn.prepareStatement(
-					"UPDATE SERVICE SET SERVICENAME=?,PRICE=?,DESCRIPTION=?,SERVICECATEGORY=?,CREATED_BY=?,MODIFIED_BY=?,CREATED_DATETIME=?,MODIFIED_DATETIME=? WHERE ID=?");
+			PreparedStatement pstmt = conn
+					.prepareStatement("UPDATE SERVICE SET SERVICENAME=?, PRICE=?, PRICE=?, DESCRIPTION=?, "
+							+ "SERVICECATEGORY=?, CREATED_BY=?, MODIFIED_BY=?, CREATED_DATETIME=?, "
+							+ "MODIFIED_DATETIME=? WHERE ID=?");
 
 			pstmt.setString(1, bean.getServiceName());
 			pstmt.setDouble(2, bean.getPrice());

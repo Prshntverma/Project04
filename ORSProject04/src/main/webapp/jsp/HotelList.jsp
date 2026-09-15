@@ -1,3 +1,4 @@
+
 <%@page import="com.sunilos.p4.ctl.HotelListCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
@@ -30,12 +31,32 @@ String _suc = ServletUtility.getSuccessMessage(request);
 				<i class="bi bi-building me-2"></i> Hotel List
 			</h5>
 
+			<div class="d-flex gap-2">
+
+				<a href="<%=ORSView.HOTEL_REPORT_CTL%>" target="_blank"
+					class="btn btn-sm btn-warning fw-semibold"> <i
+					class="bi bi-file-earmark-pdf me-1"></i> Print PDF
+
+				</a> <a href="<%=ORSView.HOTEL_REPORT_CTL%>?type=doc" target="_blank"
+					class="btn btn-sm btn-info fw-semibold"> <i
+					class="bi bi-file-earmark-word me-1"></i> Print DOC
+
+				</a> <a href="HotelCtl"
+					class="btn btn-sm btn-light text-primary fw-semibold"> <i
+					class="bi bi-plus-circle me-1"></i> Add Hotel
+
+				</a>
+
+			</div>
+
 		</div>
+
 
 		<form action="<%=ORSView.HOTEL_LIST_CTL%>" method="POST">
 
 			<input type="hidden" name="pageNo" value="<%=pageNo%>"> <input
 				type="hidden" name="pageSize" value="<%=pageSize%>">
+
 
 			<div
 				class="p-3 bg-light border-bottom d-flex flex-wrap gap-2 align-items-center">
@@ -45,10 +66,12 @@ String _suc = ServletUtility.getSuccessMessage(request);
 					placeholder="Search by Hotel Name"
 					value="<%=ServletUtility.getParameter("hotelName", request)%>">
 
+
 				<input type="text" name="location"
 					class="form-control form-control-sm" style="max-width: 250px;"
 					placeholder="Search by Location"
 					value="<%=ServletUtility.getParameter("location", request)%>">
+
 
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
@@ -56,6 +79,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 					<i class="bi bi-search me-1"></i> Search
 
 				</button>
+
 
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_DELETE%>"
@@ -75,6 +99,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			<div class="alert alert-danger py-2 mx-3 mt-3">
 
 				<i class="bi bi-exclamation-triangle-fill me-2"></i>
+
 				<%=_err%>
 
 			</div>
@@ -91,6 +116,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 			<div class="alert alert-success py-2 mx-3 mt-3">
 
 				<i class="bi bi-check-circle-fill me-2"></i>
+
 				<%=_suc%>
 
 			</div>
@@ -143,15 +169,21 @@ String _suc = ServletUtility.getSuccessMessage(request);
 							<td><input type="checkbox" name="ids"
 								value="<%=bean.getId()%>"></td>
 
+
 							<td class="text-muted small"><%=index++%></td>
+
 
 							<td class="fw-semibold"><%=bean.getHotelName()%></td>
 
+
 							<td><%=bean.getLocation()%></td>
+
 
 							<td><%=bean.getRating()%></td>
 
+
 							<td><%=bean.getContactNo()%></td>
+
 
 							<td><a href="HotelCtl?id=<%=bean.getId()%>"
 								class="btn btn-sm btn-outline-primary"> <i

@@ -14,7 +14,7 @@ public class HotelBean extends BaseBean{
 	public String getHotelName() {
 		return hotelName;
 	}
-
+	
 	public void setHotelName(String hotelName) {
 		this.hotelName = hotelName;
 	}
