@@ -21,9 +21,6 @@ locationMap.put("Indore", "Indore");
 locationMap.put("Bhopal", "Bhopal");
 locationMap.put("Gurugram", "Gurugram");
 locationMap.put("Noida", "Noida");
-locationMap.put("Delhi", "Delhi");
-locationMap.put("Mumbai", "Mumbai");
-locationMap.put("Pune", "Pune");
 %>
 
 <div class="container py-4" style="max-width: 680px;">

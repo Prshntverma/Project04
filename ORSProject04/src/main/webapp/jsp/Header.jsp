@@ -629,7 +629,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 
 
 				<li>
-					<h6 class="dropdown-header text-uppercase text-i nfo small">
+					<h6 class="dropdown-header text-uppercase text-info small">
 						<i class="bi bi-tools me-1"></i> Service Manage
 					</h6>
 				</li>
