@@ -35,11 +35,6 @@ public class OrderCtl extends BaseCtl<OrderBean, OrderModel> {
 
 		boolean pass = true;
 
-		if (DataValidator.isNull(request.getParameter("id"))) {
-			request.setAttribute("id", PropertyReader.getValue("error.require", "id"));
-			pass = false;
-		}
-
 		if (DataValidator.isNull(request.getParameter("productName"))) {
 			request.setAttribute("productName",
 					PropertyReader.getValue("error.require", "Product Name"));

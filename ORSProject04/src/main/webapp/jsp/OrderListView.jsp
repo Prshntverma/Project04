@@ -15,17 +15,11 @@
 
 <%
 int pageNo = ServletUtility.getPageNo(request);
-
 int pageSize = ServletUtility.getPageSize(request);
-
 int index = ((pageNo - 1) * pageSize) + 1;
-
 List list = ServletUtility.getList(request);
-
 Iterator<OrderBean> it = list.iterator();
-
 String _err = ServletUtility.getErrorMessage(request);
-
 String _suc = ServletUtility.getSuccessMessage(request);
 %>
 

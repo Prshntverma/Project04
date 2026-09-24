@@ -47,7 +47,7 @@ public class DataUtility {
 	 * Converts an Object to String
 	 */
 	public static String getStringData(Object val) {
-		if (val != null) {
+		if (val != null && !val.equals(0.0) && !val.equals(0)) {
 			return val.toString();
 		} else {
 			return "";
@@ -152,14 +152,14 @@ public class DataUtility {
 	}
 
 	public static Double getDouble(String val) {
-	try {
-		if (val != null && val.trim().length() > 0) {
-			return Double.parseDouble(val.trim());
+		try {
+			if (val != null && val.trim().length() > 0) {
+				return Double.parseDouble(val.trim());
+			}
+		} catch (Exception e) {
+			return 0.0;
 		}
-	} catch (Exception e) {
 		return 0.0;
 	}
-	return 0.0;
-}
 
 }

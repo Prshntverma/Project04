@@ -14,7 +14,7 @@
 String _suc = ServletUtility.getSuccessMessage(request);
 String _err = ServletUtility.getErrorMessage(request);
 
-HashMap categoryMap = new HashMap();
+HashMap<String, String> categoryMap = new HashMap();
 
 categoryMap.put("1", "Electronics");
 categoryMap.put("2", "Clothing");
@@ -76,59 +76,49 @@ categoryMap.put("5", "Furniture");
 					value="<%=DataUtility.getTimestamp(bean.getModifiedDatetime())%>">
 
 
-				<!-- Product Name -->
-				<div class="mb-3">
-
-					<label class="form-label fw-semibold"> Product Name </label> <input
-						type="text" name="productName" class="form-control"
-						value="<%=DataUtility.getStringData(bean.getProductName())%>">
-
-					<div class="text-danger small mt-1">
-						<%=ServletUtility.getErrorMessage("productName", request)%>
+				<!-- First Row: Product Name & Price -->
+				<div class="row">
+					<!-- Product Name -->
+					<div class="col-md-6 mb-3">
+						<label class="form-label fw-semibold"> Product Name </label> <input
+							type="text" name="productName" class="form-control"
+							value="<%=DataUtility.getStringData(bean.getProductName())%>">
+						<div class="text-danger small mt-1">
+							<%=ServletUtility.getErrorMessage("productName", request)%>
+						</div>
 					</div>
 
+					<!-- Price -->
+					<div class="col-md-6 mb-3">
+						<label class="form-label fw-semibold"> Price </label> <input
+							type="text" name="price" class="form-control"
+							value="<%=DataUtility.getStringData(bean.getPrice())%>">
+						<div class="text-danger small mt-1">
+							<%=ServletUtility.getErrorMessage("price", request)%>
+						</div>
+					</div>
 				</div>
 
-
-				<!-- Price -->
-				<div class="mb-3">
-
-					<label class="form-label fw-semibold"> Price </label> <input
-						type="text" name="price" class="form-control"
-						value="<%=DataUtility.getStringData(bean.getPrice())%>">
-
-					<div class="text-danger small mt-1">
-						<%=ServletUtility.getErrorMessage("price", request)%>
+				<!-- Second Row: Quantity & Category -->
+				<div class="row">
+					<!-- Quantity -->
+					<div class="col-md-6 mb-3">
+						<label class="form-label fw-semibold"> Quantity </label> <input
+							type="text" name="quantity" class="form-control"
+							value="<%=DataUtility.getStringData(bean.getQuantity())%>">
+						<div class="text-danger small mt-1">
+							<%=ServletUtility.getErrorMessage("quantity", request)%>
+						</div>
 					</div>
 
-				</div>
-
-
-				<!-- Quantity -->
-				<div class="mb-3">
-
-					<label class="form-label fw-semibold"> Quantity </label> <input
-						type="text" name="quantity" class="form-control"
-						value="<%=DataUtility.getStringData(bean.getQuantity())%>">
-
-					<div class="text-danger small mt-1">
-						<%=ServletUtility.getErrorMessage("quantity", request)%>
+					<!-- Category -->
+					<div class="col-md-6 mb-3">
+						<label class="form-label fw-semibold"> Category </label>
+						<%=HTMLUtility.getList("category", bean.getCategory(), categoryMap)%>
+						<div class="text-danger small mt-1">
+							<%=ServletUtility.getErrorMessage("category", request)%>
+						</div>
 					</div>
-
-				</div>
-
-
-				<!-- Category -->
-				<div class="mb-3">
-
-					<label class="form-label fw-semibold"> Category </label>
-
-					<%=HTMLUtility.getList("category", bean.getCategory(), categoryMap)%>
-
-					<div class="text-danger small mt-1">
-						<%=ServletUtility.getErrorMessage("category", request)%>
-					</div>
-
 				</div>
 
 
