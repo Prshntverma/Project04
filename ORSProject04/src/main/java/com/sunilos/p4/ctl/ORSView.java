@@ -225,9 +225,10 @@ public interface ORSView {
 	public String COURSE_MODULE_VIEW = PAGE_FOLDER + "/CourseModuleView.jsp";
 
 	public String COURSE_MODULE_LIST_VIEW = PAGE_FOLDER + "/CourseModuleListView.jsp";
+	
+	
 //	============================ service ============================================
 	
-	// ================================= Service =========================================
 
 	public String SERVICE_VIEW = PAGE_FOLDER + "/ServiceView.jsp";
 
@@ -338,5 +339,20 @@ public interface ORSView {
 	public String ORDER_REPORT_CTL = APP_CONTEXT + "/ctl/OrderReportCtl";
 
 	public String ORDER_REPORT_VIEW = "/reports/OrderListReport.jrxml";
+	
+//	=============================Movie==========================================
+	
+	public String MOVIE_LIST_CTL = APP_CONTEXT + "/ctl/MovieListCtl";
+
+	public String MOVIE_LIST_VIEW = PAGE_FOLDER + "/MovieListView.jsp";
+
+	public String MOVIE_CTL = APP_CONTEXT + "/ctl/MovieCtl";
+
+	public String MOVIE_VIEW = PAGE_FOLDER + "/MovieView.jsp";
+
+	public String MOVIE_REPORT_CTL = APP_CONTEXT + "/ctl/MovieReportCtl";
+
+	public String MOVIE_REPORT_VIEW = "/reports/MovieListReport.jrxml";
+	
 
 }

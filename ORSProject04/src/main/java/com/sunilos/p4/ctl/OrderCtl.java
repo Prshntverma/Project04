@@ -36,26 +36,22 @@ public class OrderCtl extends BaseCtl<OrderBean, OrderModel> {
 		boolean pass = true;
 
 		if (DataValidator.isNull(request.getParameter("productName"))) {
-			request.setAttribute("productName",
-					PropertyReader.getValue("error.require", "Product Name"));
+			request.setAttribute("productName", PropertyReader.getValue("error.require", "Product Name"));
 			pass = false;
 		}
 
 		if (DataValidator.isNull(request.getParameter("price"))) {
-			request.setAttribute("price",
-					PropertyReader.getValue("error.require", "Price"));
+			request.setAttribute("price", PropertyReader.getValue("error.require", "Price"));
 			pass = false;
 		}
 
 		if (DataValidator.isNull(request.getParameter("quantity"))) {
-			request.setAttribute("quantity",
-					PropertyReader.getValue("error.require", "Quantity"));
+			request.setAttribute("quantity", PropertyReader.getValue("error.require", "Quantity"));
 			pass = false;
 		}
 
 		if (DataValidator.isNull(request.getParameter("category"))) {
-			request.setAttribute("category",
-					PropertyReader.getValue("error.require", "Category"));
+			request.setAttribute("category", PropertyReader.getValue("error.require", "Category"));
 			pass = false;
 		}
 
@@ -73,17 +69,13 @@ public class OrderCtl extends BaseCtl<OrderBean, OrderModel> {
 
 		bean.setId(DataUtility.getLong(request.getParameter("id")));
 
-		bean.setProductName(
-				DataUtility.getString(request.getParameter("productName")));
+		bean.setProductName(DataUtility.getString(request.getParameter("productName")));
 
-		bean.setPrice(
-				DataUtility.getDouble(request.getParameter("price")));
+		bean.setPrice(DataUtility.getDouble(request.getParameter("price")));
 
-		bean.setQuantity(
-				DataUtility.getInt(request.getParameter("quantity")));
+		bean.setQuantity(DataUtility.getInt(request.getParameter("quantity")));
 
-		bean.setCategory(
-				DataUtility.getString(request.getParameter("category")));
+		bean.setCategory(DataUtility.getString(request.getParameter("category")));
 
 		populateDTO(bean, request);
 

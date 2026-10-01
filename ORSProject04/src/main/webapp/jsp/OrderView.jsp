@@ -1,4 +1,3 @@
-
 <%@page import="com.sunilos.p4.ctl.OrderCtl"%>
 <%@page import="com.sunilos.p4.ctl.BaseCtl"%>
 <%@page import="com.sunilos.p4.ctl.ORSView"%>
@@ -44,9 +43,11 @@ categoryMap.put("5", "Furniture");
 			<%
 			if (_suc != null && !_suc.isEmpty()) {
 			%>
+
 			<div class="alert alert-success">
 				<%=_suc%>
 			</div>
+
 			<%
 			}
 			%>
@@ -54,9 +55,11 @@ categoryMap.put("5", "Furniture");
 			<%
 			if (_err != null && !_err.isEmpty()) {
 			%>
+
 			<div class="alert alert-danger">
 				<%=_err%>
 			</div>
+
 			<%
 			}
 			%>
@@ -64,6 +67,7 @@ categoryMap.put("5", "Furniture");
 			<form name="orderForm" action="<%=ORSView.ORDER_CTL%>" method="POST">
 
 				<!-- Hidden Fields -->
+
 				<input type="hidden" name="id" value="<%=bean.getId()%>"> <input
 					type="hidden" name="createdBy" value="<%=bean.getCreatedBy()%>">
 
@@ -77,52 +81,84 @@ categoryMap.put("5", "Furniture");
 
 
 				<!-- First Row: Product Name & Price -->
+
 				<div class="row">
+
 					<!-- Product Name -->
+
 					<div class="col-md-6 mb-3">
-						<label class="form-label fw-semibold"> Product Name </label> <input
-							type="text" name="productName" class="form-control"
+
+						<label class="form-label fw-semibold"> Product Name <span
+							class="text-danger">*</span>
+						</label> <input type="text" name="productName" class="form-control"
 							value="<%=DataUtility.getStringData(bean.getProductName())%>">
+
 						<div class="text-danger small mt-1">
 							<%=ServletUtility.getErrorMessage("productName", request)%>
 						</div>
+
 					</div>
 
+
 					<!-- Price -->
+
 					<div class="col-md-6 mb-3">
-						<label class="form-label fw-semibold"> Price </label> <input
-							type="text" name="price" class="form-control"
+
+						<label class="form-label fw-semibold"> Price <span
+							class="text-danger">*</span>
+						</label> <input type="text" name="price" class="form-control"
 							value="<%=DataUtility.getStringData(bean.getPrice())%>">
+
 						<div class="text-danger small mt-1">
 							<%=ServletUtility.getErrorMessage("price", request)%>
 						</div>
+
 					</div>
+
 				</div>
 
+
 				<!-- Second Row: Quantity & Category -->
+
 				<div class="row">
+
 					<!-- Quantity -->
+
 					<div class="col-md-6 mb-3">
-						<label class="form-label fw-semibold"> Quantity </label> <input
-							type="text" name="quantity" class="form-control"
+
+						<label class="form-label fw-semibold"> Quantity <span
+							class="text-danger">*</span>
+						</label> <input type="text" name="quantity" class="form-control"
 							value="<%=DataUtility.getStringData(bean.getQuantity())%>">
+
 						<div class="text-danger small mt-1">
 							<%=ServletUtility.getErrorMessage("quantity", request)%>
 						</div>
+
 					</div>
 
+
 					<!-- Category -->
+
 					<div class="col-md-6 mb-3">
-						<label class="form-label fw-semibold"> Category </label>
+
+						<label class="form-label fw-semibold"> Category <span
+							class="text-danger">*</span>
+						</label>
+
 						<%=HTMLUtility.getList("category", bean.getCategory(), categoryMap)%>
+
 						<div class="text-danger small mt-1">
 							<%=ServletUtility.getErrorMessage("category", request)%>
 						</div>
+
 					</div>
+
 				</div>
 
 
 				<!-- Buttons -->
+
 				<div class="d-flex align-items-center mt-4">
 
 					<button type="submit" name="operation" value="<%=BaseCtl.OP_SAVE%>"
@@ -131,6 +167,7 @@ categoryMap.put("5", "Furniture");
 						<i class="bi bi-save me-1"></i> Save
 
 					</button>
+
 
 					<a href="OrderListCtl?id=0" class="btn btn-secondary ms-auto">
 
@@ -143,5 +180,7 @@ categoryMap.put("5", "Furniture");
 			</form>
 
 		</div>
+
 	</div>
+
 </div>

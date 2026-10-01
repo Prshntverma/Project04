@@ -52,17 +52,24 @@ genderMap.put("F", "Female");
 			<%
 			if (bean.getId() > 0) {
 			%>
+			
+			<!-- -------------------------------image showing ---------------------------------------------  -->
 			<div class="d-flex align-items-center gap-3 mb-4">
 				<img src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=bean.getId()%>"
 					onerror="this.style.display='none';" alt="User Photo"
 					class="rounded-circle border" width="80" height="80"
 					style="object-fit: cover;">
+		
+		<!-- ----------------------------------------- photo part -------------------------------------------------- -->		
 				<form action="<%=ORSView.UPLOAD_PHOTO_CTL%>" method="POST"
 					enctype="multipart/form-data"
 					class="d-flex align-items-center gap-2">
-					<input type="hidden" name="id" value="<%=bean.getId()%>"> <input
+					<input type="hidden" name="id" value="<%=bean.getId()%>">
+					 <input
 						type="file" name="photo" class="form-control form-control-sm"
 						accept="image/*">
+		<!--------------------------------------- button for photo-------------------------------------------------- -->
+				
 					<button type="submit"
 						class="btn btn-sm btn-outline-primary text-nowrap">
 						<i class="bi bi-upload me-1"></i> Upload Photo

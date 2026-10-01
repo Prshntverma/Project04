@@ -661,7 +661,7 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				</a></li>
 
 				<!-- ============================================student========================================= -->
-				<li>
+				<%-- <li>
 					<h6 class="dropdown-header text-uppercase text-info small">
 						<i class="bi bi-person me-1"></i> Student
 					</h6>
@@ -674,11 +674,30 @@ String displayName = loggedIn ? userBean.getFirstName() + " (" + session.getAttr
 				<li><a class="dropdown-item"
 					href="<%=ORSView.STUDENT_M_LIST_CTL%>"> <i
 						class="bi bi-person me-2 text-success"></i> Student List
+				</a></li> --%>
+				<!-- ===========================Movie ======================================  -->
+
+				<li>
+
+					<h6 class="dropdown-header text-uppercase text-info small">
+
+						<i class="bi bi-film me-1"></i> Movie
+
+					</h6>
+
+				</li>
+
+				<li><a class="dropdown-item" href="<%=ORSView.MOVIE_CTL%>">
+
+						<i class="bi bi-plus-circle me-2 text-success"></i> Add Movie
+
 				</a></li>
 
+				<li><a class="dropdown-item" href="<%=ORSView.MOVIE_LIST_CTL%>">
 
+						<i class="bi bi-film me-2 text-success"></i> Movie List
 
-
+				</a></li>
 
 
 			</ul>

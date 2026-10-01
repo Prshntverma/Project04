@@ -69,8 +69,6 @@ String _suc = ServletUtility.getSuccessMessage(request);
 					placeholder="Search by Product Name"
 					value="<%=ServletUtility.getParameter("productName", request)%>">
 
-
-
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">
 
@@ -142,7 +140,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 
 							<th>#</th>
 
-							<th>Product Name</th>
+							<th class="fw-semibold text-center" >Product Name</th>
 
 							<th>Price</th>
 
@@ -168,7 +166,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 
 						<tr>
 
-							<td><input type="checkbox" name="ids"
+							<td><input type="checkbox" name="ids" onchange=
 								value="<%=bean.getId()%>"></td>
 
 

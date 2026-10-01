@@ -97,15 +97,22 @@ String _err = ServletUtility.getErrorMessage(request);
 						%>
 						<tr>
 
-<!-- check box for delete  --><td><input type="checkbox" name="ids"
+							<!-- check box for delete  -->
+							<td><input type="checkbox" name="ids"
 								value="<%=bean.getId()%>"></td>
 
 							<td class="text-muted small"><%=index++%></td>
+
+
 							<td><img
 								src="<%=ORSView.UPLOAD_PHOTO_CTL%>?id=<%=bean.getId()%>"
 								onerror="this.style.display='none';" alt="User Photo"
 								class="rounded-circle border" width="30" height="30"
 								style="object-fit: cover;"></td>
+
+
+
+
 							<td class="fw-semibold"><%=bean.getFirstName()%></td>
 							<td><%=bean.getLastName()%></td>
 							<td><%=bean.getLogin()%></td>
