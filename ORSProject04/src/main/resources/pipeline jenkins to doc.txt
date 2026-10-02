@@ -1,0 +1,248 @@
+
+
+pipeline {
+
+    agent any
+
+    tools {
+        maven 'Maven'
+    }
+
+    environment {
+
+        // Java
+        JAVA_HOME = "C:\\Program Files\\Java\\jdk-17"
+
+        // Docker executable
+        DOCKER_EXE = "C:\\Users\\Hp\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe"
+
+        // Docker Compose executable
+        DOCKER_COMPOSE_EXE = "C:\\Users\\Hp\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker-compose.exe"
+
+        // Docker project folder
+        DOCKER_PATH = "C:\\Users\\Hp\\OneDrive\\Desktop\\Docker"
+    }
+
+    stages {
+
+        stage('Cleanup Workspace') {
+            steps {
+                deleteDir()
+            }
+        }
+
+        stage('Clone Repository') {
+            steps {
+
+                git branch: 'main',
+                    credentialsId: 'github-credentials',
+                    url: 'https://github.com/Prshntverma/Project04.git'
+            }
+        }
+
+        stage('Build WAR') {
+            steps {
+
+                echo "Building ORSProject04 WAR..."
+
+                bat 'java -version'
+                bat 'mvn -version'
+
+                bat '''
+                mvn clean package -DskipTests -f ORSProject04\\pom.xml
+
+                if errorlevel 1 (
+                    echo ERROR: Maven build failed!
+                    exit /b 1
+                )
+                '''
+
+                echo "Checking generated WAR..."
+
+                bat '''
+                if not exist "ORSProject04\\target\\ORSProject04.war" (
+                    echo ERROR: WAR file not found!
+                    exit /b 1
+                )
+
+                echo WAR file successfully created.
+                '''
+            }
+        }
+
+        stage('Check Docker') {
+            steps {
+
+                echo "Checking Docker..."
+
+                bat '''
+                if not exist "%DOCKER_EXE%" (
+                    echo ERROR: Docker executable not found!
+                    exit /b 1
+                )
+
+                "%DOCKER_EXE%" --version
+                '''
+
+                bat '''
+                "%DOCKER_EXE%" info
+                '''
+
+                echo "Checking Docker Compose..."
+
+                bat '''
+                if not exist "%DOCKER_COMPOSE_EXE%" (
+                    echo ERROR: Docker Compose executable not found!
+                    echo Path: %DOCKER_COMPOSE_EXE%
+                    exit /b 1
+                )
+
+                "%DOCKER_COMPOSE_EXE%" version
+                '''
+            }
+        }
+
+        stage('Copy WAR to Docker') {
+            steps {
+
+                echo "Copying WAR to Docker folder..."
+
+                bat '''
+                if not exist "%DOCKER_PATH%" (
+                    echo ERROR: Docker project folder not found!
+                    exit /b 1
+                )
+
+                copy /Y "ORSProject04\\target\\ORSProject04.war" "%DOCKER_PATH%\\ORSProject04.war"
+
+                if errorlevel 1 (
+                    echo ERROR: WAR copy failed!
+                    exit /b 1
+                )
+
+                echo WAR copied successfully.
+                '''
+            }
+        }
+
+        stage('Docker Compose Down') {
+            steps {
+
+                echo "Stopping old Docker containers..."
+
+                bat '''
+                cd /d "%DOCKER_PATH%"
+
+                "%DOCKER_COMPOSE_EXE%" down
+                '''
+            }
+        }
+
+        stage('Docker Compose Build') {
+            steps {
+
+                echo "Building Docker images..."
+
+                bat '''
+                cd /d "%DOCKER_PATH%"
+
+                "%DOCKER_COMPOSE_EXE%" build
+
+                if errorlevel 1 (
+                    echo ERROR: Docker Compose build failed!
+                    exit /b 1
+                )
+                '''
+            }
+        }
+
+        stage('Docker Compose Up') {
+            steps {
+
+                echo "Starting Docker containers..."
+
+                bat '''
+                cd /d "%DOCKER_PATH%"
+
+                "%DOCKER_COMPOSE_EXE%" up -d
+
+                if errorlevel 1 (
+                    echo ERROR: Docker Compose UP failed!
+                    exit /b 1
+                )
+                '''
+            }
+        }
+
+        stage('Check Docker Containers') {
+            steps {
+
+                echo "Checking containers..."
+
+                bat '''
+                "%DOCKER_EXE%" ps
+                '''
+
+                bat '''
+                cd /d "%DOCKER_PATH%"
+
+                "%DOCKER_COMPOSE_EXE%" ps
+                '''
+            }
+        }
+
+        stage('Docker Logs') {
+            steps {
+
+                echo "Showing WebApp logs..."
+
+                bat '''
+                cd /d "%DOCKER_PATH%"
+
+                "%DOCKER_COMPOSE_EXE%" logs --tail=50 webapp
+                '''
+            }
+        }
+
+        stage('Verify Deployment') {
+            steps {
+
+                echo "Waiting for application..."
+
+                sleep time: 30, unit: 'SECONDS'
+
+                bat '''
+                curl --fail http://localhost:8080/ORSProject04
+
+                if errorlevel 1 (
+                    echo ERROR: Application verification failed!
+                    exit /b 1
+                )
+
+                echo Application deployed successfully.
+                '''
+            }
+        }
+    }
+
+    post {
+
+        always {
+            echo 'Cleaning Jenkins workspace...'
+            deleteDir()
+        }
+
+        success {
+            echo '=========================================='
+            echo 'Docker Deployment Successful'
+            echo '=========================================='
+            echo 'Application: http://localhost:8080/ORSProject04'
+        }
+
+        failure {
+            echo '=========================================='
+            echo 'Docker Deployment Failed'
+            echo '=========================================='
+        }
+    }
+}
