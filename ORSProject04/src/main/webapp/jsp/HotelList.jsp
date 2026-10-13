@@ -141,7 +141,7 @@ String _suc = ServletUtility.getSuccessMessage(request);
 
 							<th>#</th>
 
-							<th>Hotel Name</th>
+							<th >Hotel Name</th>
 
 							<th>Location</th>
 
