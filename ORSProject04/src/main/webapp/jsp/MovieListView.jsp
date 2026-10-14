@@ -74,6 +74,14 @@ String _suc = ServletUtility.getSuccessMessage(request);
 				<input type="text" name="title" class="form-control form-control-sm"
 					style="max-width: 250px;" placeholder="Search by Movie Title"
 					value="<%=ServletUtility.getParameter("title", request)%>">
+					
+					
+				<input type="text" name="rating" class="form-control form-control-sm"
+					style="max-width: 250px;" placeholder="Search by rating
+					value="<%=ServletUtility.getParameter("rating", request)%>">
+					
+					
+					
 
 				<button type="submit" name="operation"
 					value="<%=BaseCtl.OP_SEARCH%>" class="btn btn-primary btn-sm">

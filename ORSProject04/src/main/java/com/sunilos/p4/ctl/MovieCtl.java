@@ -26,32 +26,27 @@ public class MovieCtl extends BaseCtl<MovieBean, MovieModel> {
 		boolean pass = true;
 
 		if (DataValidator.isNull(request.getParameter("id"))) {
-			request.setAttribute("id",
-					PropertyReader.getValue("error.require", "id"));
+			request.setAttribute("id", PropertyReader.getValue("error.require", "id"));
 			pass = false;
 		}
 
 		if (DataValidator.isNull(request.getParameter("title"))) {
-			request.setAttribute("title",
-					PropertyReader.getValue("error.require", "title"));
+			request.setAttribute("title", PropertyReader.getValue("error.require", "title"));
 			pass = false;
 		}
 
 		if (DataValidator.isNull(request.getParameter("genre"))) {
-			request.setAttribute("genre",
-					PropertyReader.getValue("error.require", "genre"));
+			request.setAttribute("genre", PropertyReader.getValue("error.require", "genre"));
 			pass = false;
 		}
 
 		if (DataValidator.isNull(request.getParameter("duration"))) {
-			request.setAttribute("duration",
-					PropertyReader.getValue("error.require", "duration"));
+			request.setAttribute("duration", PropertyReader.getValue("error.require", "duration"));
 			pass = false;
 		}
 
 		if (DataValidator.isNull(request.getParameter("rating"))) {
-			request.setAttribute("rating",
-					PropertyReader.getValue("error.require", "rating"));
+			request.setAttribute("rating", PropertyReader.getValue("error.require", "rating"));
 			pass = false;
 		}
 
